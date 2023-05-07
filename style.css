@@ -20,9 +20,16 @@
     --grid-border-color:var(--color-french-grey);
 
     /* font-families */
-    --page-title-font: Copperplate, "Courier New", monospace;
-    --cb-title-font:Copperplate, Monaco, "Courier New", monospace;
-    --cb-text-font:Verdana, Arial;
+    --page-title-font: Helvetica, Arial, sans-serif;
+    --cb-title-font: Helvetica, Arial, sans-serif;
+    --cb-text-font: Verdana, Arial;
     --button-text-font:Verdana, Arial;
 }
 
+.title{
+    color: var(--page-title-color);
+    font-family: var(--page-title-font);
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
