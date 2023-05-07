@@ -1,0 +1,20 @@
+:root{
+    --color-carrot-orange: #F99C39;
+    --color-onyx: #45424d;
+    --color-french-grey: #cac8d0;
+    --color-russian-violet: #2d0736;
+    --color-pale-purple: #faedfd;
+
+    /* background colors */
+    --main-bg-color:var(--color-russian-violet);
+    --cb-bg-color:var(--color-pale-purple);
+    --button-bg-color:var(--color-russian-violet);
+
+    /* text colors */
+    --page-title-color:var(--color-carrot-orange);
+    --cb-text-color:var(--color-onyx);
+    --button-text-color:var(--color-pale-purple);
+
+    /* border colors */
+    --grid-border-color:var(--color-french-grey);
+}
