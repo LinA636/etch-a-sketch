@@ -1,4 +1,5 @@
 :root{
+    /* Colors */
     --color-carrot-orange: #F99C39;
     --color-onyx: #45424d;
     --color-french-grey: #cac8d0;
@@ -17,4 +18,11 @@
 
     /* border colors */
     --grid-border-color:var(--color-french-grey);
+
+    /* font-families */
+    --page-title-font: Copperplate, "Courier New", monospace;
+    --cb-title-font:Copperplate, Monaco, "Courier New", monospace;
+    --cb-text-font:Verdana, Arial;
+    --button-text-font:Verdana, Arial;
 }
+
