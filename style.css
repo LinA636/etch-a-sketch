@@ -118,8 +118,8 @@ button{
     font-size: inherit;
 }
 
-.cb-clear-button{
-    align-self: stretch;
+button:hover{
+    opacity: 50%;
 }
 
 /* grid container */
