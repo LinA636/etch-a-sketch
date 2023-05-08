@@ -14,7 +14,8 @@
     /* text colors */
     --page-title-color: var(--color-carrot-orange);
     --cb-text-color: var(--color-onyx);
-    --button-text-color: var(--color-pale-purple);
+    --button-text-color: var(--color-french-grey);
+    --footer-text-color: var(--color-french-grey);
 
     /* border colors */
     --grid-border-color: var(--color-french-grey);
@@ -56,6 +57,10 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 20px;
+}
+
+.footer{
+    color: var(--footer-text-color);
 }
 
 /* controlboard */
