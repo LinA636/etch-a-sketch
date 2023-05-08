@@ -54,7 +54,7 @@ body {
 
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
     gap: 20px;
 }
 
@@ -124,11 +124,17 @@ button{
 
 /* grid container */
 .grid-container{
-    border: 1px solid var(--grid-border-color);
+    flex-grow: 1;
 
-    display: flexbox;
-    width: 860px;
-    height: 860px;
-    max-width: 860px;
-    max-height: 860px;
+    border: 15px var(--grid-border-color);
+    border-style: ridge;
+
+    width: 20vw;
+    height: 20vw;
+
+    min-width: 400px;
+    min-height: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
 }
