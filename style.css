@@ -3,13 +3,15 @@
     --color-carrot-orange: #F99C39;
     --color-onyx: #45424d;
     --color-french-grey: #cac8d0;
-    --color-russian-violet: #2d0736;
     --color-pale-purple: #faedfd;
+ /*  --color-white-smoke: #F5F5F5; */
+    --color-dark-purple: #1E0524;
 
     /* background colors */
-    --main-bg-color: var(--color-russian-violet);
+    --main-bg-color: var(--color-dark-purple);
     --cb-bg-color: var(--color-pale-purple);
-    --button-bg-color: var(--color-russian-violet);
+    --button-bg-color: var(--color-dark-purple);
+    --grid-container-bg-color: var(--color-pale-purple);
 
     /* text colors */
     --page-title-color: var(--color-carrot-orange);
@@ -133,12 +135,11 @@ button:hover{
 
     border: 15px var(--grid-border-color);
     border-style: ridge;
-
     width: 20vw;
     height: 20vw;
-
     min-width: 400px;
     min-height: 400px;
+    background-color: var(--grid-container-bg-color);
 
     display: flex;
     flex-wrap: wrap;
