@@ -41,20 +41,49 @@ function handleInputNumber() {
     addListenerToGridFields();
 }
 
+function paintSketchPad(event) {
+    /* const color = getColor(); */
+    event.addEventListener("mouseover",
+        (event) => {
+            event.target.style.backgroundColor = "black";
+            /* event.target.classList.add("black-color"); */
+        });
+}
+
 function addListenerToGridFields() {
     const gridFieldNodeList = document.querySelectorAll(".grid-field");
-    gridFieldNodeList.forEach(gridField => {
-        gridField.addEventListener("mouseover", (event) => paintSketchPad('black', event))
-    });
+    gridFieldNodeList.forEach(gridField => paintSketchPad(gridField));
 
 }
 
-function paintSketchPad(color, event) {
-    event.target.style.backgroundColor = color;
+function addListenerToButton() {
+    const colorButtonNodeList = document.querySelectorAll(".color-button");
+    colorButtonNodeList.forEach((colorButton) => {
+        colorButton.addEventListener("click", (event) =>
+            handleButtonClick(event, colorButton, colorButtonNodeList))
+    })
+}
+
+function handleButtonClick(event, colorButton, colorButtonNodeList) {
+    const color = colorButton.getAttribute('data-key');
+    
+    colorButtonNodeList.forEach(element => {
+        if (element == colorButton) {
+            colorButton.classList.add("button-clicked");
+        } else {
+            element.classList.remove("button-clicked");
+        }
+    })
+}
+
+function selectButton(event) {
+    event.target.style.backgroundColor = "grey";
 }
 
 const numberOfGrids = 16;
 createSketchPad(numberOfGrids);
+/* selectButton(".black-button"); */
 addListenerToGridFields();
+addListenerToButton();
 
 

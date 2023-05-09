@@ -153,3 +153,11 @@ button:hover {
     border: 1px solid;
     border-color: var(--grid-border-color);
 }
+
+.black-color{
+    background-color: black;
+}
+
+.button-clicked{
+    opacity: 50%;
+}
