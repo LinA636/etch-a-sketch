@@ -25,9 +25,17 @@ function createSketchPad(numberOfGrids) {
     }
 }
 
+function checkInputNumber(inputNumber) {
+    return 16 <= inputNumber && inputNumber <= 50;
+}
+
 function handleInputNumber() {
-    const inputNumber = document.querySelector(".cb-grid-number-input").value;
-    console.log(inputNumber);
+    const inputNumberContainer = document.querySelector(".cb-grid-number-input");
+    let inputNumber = inputNumberContainer.value;
+    if (!checkInputNumber(inputNumber)) {
+        inputNumberContainer.value = 16;
+        inputNumber = 16;
+    }
     deleteGridField();
     createSketchPad(inputNumber);
     addListenerToGridFields();
@@ -41,7 +49,7 @@ function addListenerToGridFields() {
 
 }
 
-function paintSketchPad(color, event){
+function paintSketchPad(color, event) {
     event.target.style.backgroundColor = color;
 }
 
@@ -49,11 +57,4 @@ const numberOfGrids = 16;
 createSketchPad(numberOfGrids);
 addListenerToGridFields();
 
-
-/* const gridFieldNodeList = document.querySelectorAll(".grid-field");
-gridFieldNodeList.forEach(gridField => {
-    gridField.addEventListener("mouseover", (event) => {
-        event.target.style.backgroundColor = "black";
-    })
-}); */
 
