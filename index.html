@@ -4,7 +4,6 @@
         <meta charset="utfl-8">
         <title>etch-a-sketch</title>
         <link rel="stylesheet" href="style.css">
-        <script src="javascript.js"></script>
 
     </head>
 
@@ -18,7 +17,8 @@
                 <div class="cb-grid-number-input-container">
                     <h3>squares per row <small>(16-80)</small>:</h3>
                     <input type="number" class="cb-grid-number-input"
-                    min="16" max="80">
+                    onblur="createSketchPad()"
+                    min="16" max="80" value="16">
                 </div>
 
                 <div class="cb-color-button-container">
@@ -41,5 +41,7 @@
                 Copyright @ Lina Franssen
             </p>
         </div>
+
+        <script src="javascript.js"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
     --color-onyx: #45424d;
     --color-french-grey: #cac8d0;
     --color-pale-purple: #faedfd;
- /*  --color-white-smoke: #F5F5F5; */
+    --color-white-smoke: #F5F5F5;
     --color-dark-purple: #1E0524;
 
     /* background colors */
@@ -61,7 +61,7 @@ body {
     gap: 20px;
 }
 
-.footer{
+.footer {
     color: var(--footer-text-color);
 }
 
@@ -84,36 +84,36 @@ body {
     gap: 25px;
 }
 
-h2{
+h2 {
     margin: 0px;
     text-transform: uppercase;
 }
- 
-h3{
+
+h3 {
     margin: 0px;
     text-transform: lowercase;
 }
 
-h3 small{
+h3 small {
     font-weight: 300;
 }
 
-.cb-grid-number-input-container{
+.cb-grid-number-input-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 }
 
-.cb-color-button-container{
+.cb-color-button-container {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: left;
-    gap:5px;
+    gap: 5px;
 }
 
-button{
+button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     font-family: var(--button-text-font);
@@ -125,12 +125,12 @@ button{
     font-size: inherit;
 }
 
-button:hover{
+button:hover {
     opacity: 50%;
 }
 
 /* grid container */
-.grid-container{
+.grid-container {
     flex-grow: 1;
 
     border: 15px var(--grid-border-color);
@@ -143,4 +143,13 @@ button:hover{
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.grid-field{
+    margin: 0px;
+    align-self: stretch;
+    border: 1px solid;
+    border-color: var(--grid-border-color);
 }
