@@ -18,5 +18,19 @@ function calcGridFieldWidth(numberOfGrids){
     return ((widthGridContainer-totalGridFieldBoarderWidth)/numberOfGrids);
 }
 
+function deleteGridField(){
+    const gridContainer = document.querySelector(".grid-container");
+    while(gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+}
+
+function handleInputNumber(){
+    const inputNumber = document.querySelector(".cb-grid-number-input").value;
+    console.log(inputNumber);
+    deleteGridField();
+    createSketchPad(inputNumber);
+}
+
 const numberOfGrids = 16;
 createSketchPad(numberOfGrids);
