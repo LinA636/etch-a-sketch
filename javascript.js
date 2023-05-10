@@ -1,3 +1,4 @@
+/* functions */
 function deleteGridField() {
     const gridContainer = document.querySelector(".grid-container");
     while (gridContainer.firstChild) {
@@ -41,32 +42,20 @@ function handleInputNumber() {
     addListenerToGridFields();
 }
 
-function paintSketchPad(event) {
-    /* const color = getColor(); */
-    event.addEventListener("mouseover",
-        (event) => {
-            event.target.style.backgroundColor = "black";
-            /* event.target.classList.add("black-color"); */
-        });
+function paintSketchPad(gridField) {
+    gridField.classList.add("black-color");
 }
 
 function addListenerToGridFields() {
     const gridFieldNodeList = document.querySelectorAll(".grid-field");
-    gridFieldNodeList.forEach(gridField => paintSketchPad(gridField));
-
+    gridFieldNodeList.forEach(gridField => {
+        gridField.addEventListener("mouseover", (event) => {
+            paintSketchPad(gridField);
+        });
+    });
 }
 
-function addListenerToButton() {
-    const colorButtonNodeList = document.querySelectorAll(".color-button");
-    colorButtonNodeList.forEach((colorButton) => {
-        colorButton.addEventListener("click", (event) =>
-            handleButtonClick(event, colorButton, colorButtonNodeList))
-    })
-}
-
-function handleButtonClick(event, colorButton, colorButtonNodeList) {
-    const color = colorButton.getAttribute('data-key');
-    
+function handleButtonClick(colorButton, colorButtonNodeList) {
     colorButtonNodeList.forEach(element => {
         if (element == colorButton) {
             colorButton.classList.add("button-clicked");
@@ -76,13 +65,18 @@ function handleButtonClick(event, colorButton, colorButtonNodeList) {
     })
 }
 
-function selectButton(event) {
-    event.target.style.backgroundColor = "grey";
+function addListenerToButton() {
+    const colorButtonNodeList = document.querySelectorAll(".color-button");
+    colorButtonNodeList.forEach((colorButton) => {
+        colorButton.addEventListener("click", (event) =>
+            handleButtonClick(colorButton, colorButtonNodeList))
+    })
 }
 
+/* execute code */
+/* default settings */
 const numberOfGrids = 16;
 createSketchPad(numberOfGrids);
-/* selectButton(".black-button"); */
 addListenerToGridFields();
 addListenerToButton();
 
