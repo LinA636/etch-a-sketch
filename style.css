@@ -6,12 +6,13 @@
     --color-pale-purple: #faedfd;
     --color-white-smoke: #F5F5F5;
     --color-dark-purple: #1E0524;
+    --color-white: white;
 
     /* background colors */
     --main-bg-color: var(--color-dark-purple);
     --cb-bg-color: var(--color-pale-purple);
     --button-bg-color: var(--color-dark-purple);
-    --grid-container-bg-color: var(--color-pale-purple);
+    --grid-container-bg-color: var(--color-white);
 
     /* text colors */
     --page-title-color: var(--color-carrot-orange);
