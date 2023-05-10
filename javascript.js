@@ -46,6 +46,13 @@ function getColorClass(){
     return document.querySelector(".button-clicked").getAttribute("data-key");
 }
 
+function clearSketchPad(){
+    const gridFieldNodeList = document.querySelectorAll(".grid-field");
+    gridFieldNodeList.forEach(gridField => {
+        manipulateColorClasses(gridField);
+    });
+}
+
 function manipulateColorClasses(gridField, selectedColorClass){
     const colorButtonNodeList = document.querySelectorAll(".color-button");
     colorButtonNodeList.forEach((colorButton) => {
@@ -58,17 +65,42 @@ function manipulateColorClasses(gridField, selectedColorClass){
     });
 }
 
-function clearSketchPad(){
-    const gridFieldNodeList = document.querySelectorAll(".grid-field");
-    gridFieldNodeList.forEach(gridField => {
-        manipulateColorClasses(gridField);
-    });
+function generateRandNumBetw0And255(){
+    return Math.floor(Math.random()*256);
+}
+
+function generateRandRGBColor(){
+    const r = generateRandNumBetw0And255();
+    const g = generateRandNumBetw0And255();
+    const b = generateRandNumBetw0And255();
+    const randRGB = `rgb(${r},${g},${b})`; 
+}
+
+function addBackgroundColor(gridField, selectedColorClass){
+    console.log(selectedColorClass);
+    if(selectedColorClass === "black-color"){
+        gridField.style.backgroundColor = "black";
+    }else if(selectedColorClass === "shadow-color"){
+        const styleOfGridField = getComputedStyle(gridField);
+        let opacityOfGridField = styleOfGridField.opacity;
+        console.log(opacityOfGridField);
+        opacityOfGridField = 0.1;
+        console.log(opacityOfGridField);
+        gridField.style.opacity = opacityOfGridField;
+        gridField.style.backgroundColor = "grey";
+    }else if(selectedColorClass === "rainbow-color"){
+        gridField.style.backgroundColor = `${generateRandRGBColor()}`;
+    }else if(selectedColorClass === "eraser-color"){
+        const gridContainer = document.querySelector(".grid-container");
+        const bgColor = getComputedStyle(gridContainer).backgroundColor;
+        gridField.style.backgroundColor = bgColor;
+    }
 }
 
 function paintSketchPad(gridField) {
     const selectedColorClass = getColorClass();
-    manipulateColorClasses(gridField, selectedColorClass);
-    
+    /* manipulateColorClasses(gridField, selectedColorClass); */
+    addBackgroundColor(gridField, selectedColorClass);
 }
 
 function addListenerToGridFields() {
@@ -97,6 +129,7 @@ function addListenerToButton() {
             handleButtonClick(colorButton, colorButtonNodeList))
     })
 }
+
 
 /* execute code */
 /* default settings */

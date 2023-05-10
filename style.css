@@ -7,6 +7,7 @@
     --color-white-smoke: #F5F5F5;
     --color-dark-purple: #1E0524;
     --color-white: white;
+    --color: rgb(0,0,0);
 
     /* background colors */
     --main-bg-color: var(--color-dark-purple);
@@ -165,8 +166,8 @@ button:hover {
 
 .shadow-color{
     background-color: grey;
+    opacity: 0.1;
 }
-
 .rainbow-color{
     background-color: red;
 }
