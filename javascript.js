@@ -58,6 +58,13 @@ function manipulateColorClasses(gridField, selectedColorClass){
     });
 }
 
+function clearSketchPad(){
+    const gridFieldNodeList = document.querySelectorAll(".grid-field");
+    gridFieldNodeList.forEach(gridField => {
+        manipulateColorClasses(gridField);
+    });
+}
+
 function paintSketchPad(gridField) {
     const selectedColorClass = getColorClass();
     manipulateColorClasses(gridField, selectedColorClass);
