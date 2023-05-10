@@ -13,7 +13,7 @@
     --main-bg-color: var(--color-dark-purple);
     --cb-bg-color: var(--color-pale-purple);
     --button-bg-color: var(--color-dark-purple);
-    --grid-container-bg-color: var(--color-white);
+    --grid-container-bg-color: var(--color-white-smoke);
 
     /* text colors */
     --page-title-color: var(--color-carrot-orange);
@@ -158,20 +158,4 @@ button:hover {
 
 .button-clicked{
     opacity: 50%;
-}
-
-.black-color{
-    background-color: black;
-}
-
-.shadow-color{
-    background-color: grey;
-    opacity: 0.1;
-}
-.rainbow-color{
-    background-color: red;
-}
-
-.eraser-color{
-    background-color: white;
 }
