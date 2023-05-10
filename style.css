@@ -154,10 +154,22 @@ button:hover {
     border-color: var(--grid-border-color);
 }
 
+.button-clicked{
+    opacity: 50%;
+}
+
 .black-color{
     background-color: black;
 }
 
-.button-clicked{
-    opacity: 50%;
+.shadow-color{
+    background-color: grey;
+}
+
+.rainbow-color{
+    background-color: red;
+}
+
+.eraser-color{
+    background-color: white;
 }

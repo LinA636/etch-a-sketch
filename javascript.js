@@ -42,8 +42,26 @@ function handleInputNumber() {
     addListenerToGridFields();
 }
 
+function getColorClass(){
+    return document.querySelector(".button-clicked").getAttribute("data-key");
+}
+
+function manipulateColorClasses(gridField, selectedColorClass){
+    const colorButtonNodeList = document.querySelectorAll(".color-button");
+    colorButtonNodeList.forEach((colorButton) => {
+        const colorClass = colorButton.getAttribute("data-key");
+        if(colorClass === selectedColorClass){
+            gridField.classList.add(selectedColorClass);
+        } else {
+            gridField.classList.remove(colorClass);
+        }
+    });
+}
+
 function paintSketchPad(gridField) {
-    gridField.classList.add("black-color");
+    const selectedColorClass = getColorClass();
+    manipulateColorClasses(gridField, selectedColorClass);
+    
 }
 
 function addListenerToGridFields() {
